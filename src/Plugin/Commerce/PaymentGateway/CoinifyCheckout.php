@@ -48,6 +48,7 @@ class CoinifyCheckout extends OnsitePaymentGatewayBase implements CoinifyCheckou
   public function defaultConfiguration() {
     return [
       'api_key' => '',
+      'api_secret' => '',      
     ] + parent::defaultConfiguration();
   }
 

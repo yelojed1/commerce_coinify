@@ -1,4 +1,4 @@
-commerce_payment.commerce_payment_gateway.plugin.coinify:
+commerce_payment.commerce_payment_gateway.plugin.coinify_currency_checkout:
   type: commerce_payment_gateway_configuration
   mapping:
     api_key:
