@@ -7,8 +7,8 @@ use Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\SupportsAuthorization
 use Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\SupportsRefundsInterface;
 
 /**
- * Provides the interface for the coinify Currency Checkout payment gateway.
+ * Provides the interface for the Coinify Checkout payment gateway.
  */
-interface CoinifyCurrencyInterface extends OnsitePaymentGatewayInterface, SupportsAuthorizationsInterface, SupportsRefundsInterface {
+interface CoinifyCheckoutInterface extends OnsitePaymentGatewayInterface, SupportsAuthorizationsInterface, SupportsRefundsInterface {
 
 }

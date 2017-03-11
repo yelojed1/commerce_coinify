@@ -22,7 +22,7 @@ use Drupal\Core\Form\FormStateInterface;
  *   label = @Translation("coinify Currency (Express Checkout)"),
  *   display_label = @Translation("coinify Currency"),
  *    forms = {
- *     "add-payment-method" = "Drupal\commerce_coinify\PluginForm\coinifyCheckoutForm",
+ *     "add-payment-method" = "Drupal\commerce_coinify\PluginForm\CoinifyCheckoutForm",
  *   },
  *   payment_method_types = {"credit_card"},
  *   credit_card_types = {
@@ -30,7 +30,7 @@ use Drupal\Core\Form\FormStateInterface;
  *   },
  * )
  */
-class CoinifyCurrency extends OnsitePaymentGatewayBase implements CoinifyCurrencyInterface {
+class CoinifyCheckout extends OnsitePaymentGatewayBase implements CoinifyCheckoutInterface {
 
   /**
    * {@inheritdoc}
@@ -66,6 +66,13 @@ class CoinifyCurrency extends OnsitePaymentGatewayBase implements CoinifyCurrenc
       '#required' => TRUE,
     ];
 
+    $form['api_secret'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('API Secret'),
+      '#default_value' => $this->configuration['api_secret'],
+      '#required' => TRUE,
+    ];
+
     return $form;
   }
 
@@ -78,6 +85,7 @@ class CoinifyCurrency extends OnsitePaymentGatewayBase implements CoinifyCurrenc
     if (!$form_state->getErrors()) {
       $values = $form_state->getValue($form['#parents']);
       $this->configuration['api_key'] = $values['api_key'];
+      $this->configuration['api_secret'] = $values['api_secret'];
     }
   }
 
