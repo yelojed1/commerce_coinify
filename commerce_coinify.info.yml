@@ -1,5 +1,5 @@
-name: 'Commerce Crypto'
-description: 'Provides a Crypto Currency based payment gateway'
+name: 'Commerce Coinify'
+description: 'Provides a Coinify API based payment gateway'
 package: Commerce (contrib)
 dependencies:
   - commerce_payment

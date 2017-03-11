@@ -1,14 +1,2 @@
 <?php
 
-function commerce_crypto_commerce_payment_method_info() {
-  $payment_methods['cryptocurrency'] = array(
-    'base' => 'commerce_crypto',
-    'title' => t('Crypto currency'), 
-    'short_title' => t('Crypto Currency'), 
-    'description' => t('Crypto Currency'), 
-    'terminal' => FALSE, 
-    'offsite' => TRUE, 
-    'offsite_autoredirect' => TRUE,
-  );
-  return $payment_methods;
-}

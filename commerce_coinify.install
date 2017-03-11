@@ -2,16 +2,16 @@
 
 /**
  * @file
- * Installs the tables required by Commerce crypto.
+ * Installs the tables required by Commerce coinify.
  */
 
 /**
  * Implements hook_schema().
  */
-function commerce_crypto_schema() {
+function commerce_coinify_schema() {
   $schema = array();
 
-  $schema['commerce_crypto'] = array(
+  $schema['commerce_coinify'] = array(
     'fields' => array(
       'order_id' => array(
         'type' => 'int',
