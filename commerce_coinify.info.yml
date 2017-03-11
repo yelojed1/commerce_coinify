@@ -1,0 +1,7 @@
+name: 'Commerce Crypto'
+description: 'Provides a Crypto Currency based payment gateway'
+package: Commerce (contrib)
+dependencies:
+  - commerce_payment
+core: 8.x
+type: module

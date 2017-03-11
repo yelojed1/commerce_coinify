@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Installs the tables required by Commerce crypto.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function commerce_crypto_schema() {
+  $schema = array();
+
+  $schema['commerce_crypto'] = array(
+    'fields' => array(
+      'order_id' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'crypto_address' => array(
+        'type' => 'varchar',
+        'length' => '50',
+        'not null' => TRUE,
+      ),
+      'exchange_rate' => array(
+        'description' => 'Record the exchange rate used',
+        'type' => 'numeric',
+        'precision' => 16,
+        'scale' => 5,
+        'not null' => TRUE,
+        'default' => 0.00000000,
+      ),
+    ),
+    'primary key' => array('order_id'),
+    'indexes' => array(
+      'crypto_address' => array('crypto_address'),
+    ),
+  );
+
+  return $schema;
+}
